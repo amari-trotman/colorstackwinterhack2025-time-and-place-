@@ -1,0 +1,1 @@
+dressCodePrompts = {'casual': 'a casual everyday outfit', 'business-casual': 'a neat business casual outfit suitable for work', 'semi-formal': 'a polished semi formal outfit', 'business-formal': 'a professional business formal outfit'}
