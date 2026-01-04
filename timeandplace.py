@@ -25,15 +25,10 @@ while True:
     frameCount += 1
 
     frameDisplay = cv2.resize(frame, (320, 240))
-    
+
     if frameCount % everyNthFrame == 0:
         predictedStyle, confidenceScore = analyzeOutfit(frame, model, preprocess)
-cv2.imwrite('outfit.jpg', frame)
-
-cap.release()
-
-# outfit analysis based on time, place, and weather
-dress_code = input("Enter the dress code (casual, business casual, semi-formal, business formal): ").strip().lower()
-temp = int(input("Enter the temperature in Fahrenheit: ").strip())
-
-print("Analyzing outfit...")
+        if predictedStyle == requiredDressCode:
+            result = "Your outfit matches the dress code!"
+        else:
+            result = "Your outfit does not match the dress code."
