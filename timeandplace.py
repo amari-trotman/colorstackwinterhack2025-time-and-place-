@@ -14,6 +14,10 @@ cap = cv2.VideoCapture(0)
 frameCount = 0
 everyNthFrame = 20
 
+predictedStyle = "Detecting..."
+confidenceScore = 0.0
+result = "..."
+
 ret, frame = cap.read()
 cv2.imwrite('outfit.jpg', frame)
 
