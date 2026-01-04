@@ -32,3 +32,6 @@ while True:
             result = "Your outfit matches the dress code!"
         else:
             result = "Your outfit does not match the dress code."
+
+cap.release()
+cv2.destroyAllWindows()
