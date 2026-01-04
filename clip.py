@@ -29,4 +29,4 @@ def analyzeOutfit(frame, model, preprocess):
     
     bestIdx = np.argmax(probs)
     predictedLabel = list(dressCodePrompts.keys())[bestIdx]
-    confidence = probs[0][bestIdx]
+    confidenceScore = probs[0][bestIdx]
