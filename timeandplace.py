@@ -23,6 +23,8 @@ while True:
     if not ret:
         break
     frameCount += 1
+
+    frameDisplay = cv2.resize(frame, (320, 240))
     
     if frameCount % everyNthFrame == 0:
         predictedStyle, confidenceScore = analyzeOutfit(frame, model, preprocess)
