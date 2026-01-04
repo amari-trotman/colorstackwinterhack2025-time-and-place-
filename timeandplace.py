@@ -6,6 +6,9 @@ from clip import load_model, analyzeOutfit
 requiredDressCode = input("What is the dress code for your event (casual, business-casual, semi-formal, business-formal)?: ").strip().lower()
 temperature = int(input("What is the current temperature in Fahrenheit?: ").strip())
 
+# load CLIP model
+model, preprocess = load_model()
+
 cap = cv2.VideoCapture(0)
 
 ret, frame = cap.read()
