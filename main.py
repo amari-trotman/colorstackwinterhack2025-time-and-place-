@@ -6,7 +6,9 @@ requiredDressCode = input("What is the dress code for your event (casual, busine
 temperature = int(input("What is the current temperature in Fahrenheit?: ").strip())
 
 # load CLIP model
+print("Loading CLIP model...")
 model, preprocess = load_model()
+print("Model loaded.")
 
 # webcam and image capture
 cap = cv2.VideoCapture(0)
