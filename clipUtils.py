@@ -18,7 +18,7 @@ def analyzeOutfit(frame, model, preprocess):
     imageInput = preprocess(image).unsqueeze(0).to(device)
 
     textPrompts = list(dressCodePrompts.values())
-    textInputs = clipUtils.tokenize(textPrompts).to(device)
+    textInputs = clip.tokenize(textPrompts).to(device)
 
     with torch.no_grad():
         imageFeatures = model.encode_image(imageInput)
