@@ -1,4 +1,3 @@
-# webcam and image capture
 import cv2
 from clip import load_model, analyzeOutfit
 
@@ -9,7 +8,11 @@ temperature = int(input("What is the current temperature in Fahrenheit?: ").stri
 # load CLIP model
 model, preprocess = load_model()
 
+# webcam and image capture
 cap = cv2.VideoCapture(0)
+
+frameCount = 0
+everyNthFrame = 20
 
 ret, frame = cap.read()
 cv2.imwrite('outfit.jpg', frame)
