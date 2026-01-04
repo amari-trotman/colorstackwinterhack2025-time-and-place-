@@ -35,5 +35,15 @@ while True:
         else:
             result = "Your outfit does not match the dress code."
 
+    # UI
+    cv2.putText(frame, f'Detected: {predictedStyle}', (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+    cv2.putText(frame, f'Confidence: {confidenceScore:.2f}', (20, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 0), 2)
+    cv2.putText(frame, f'Verdict: {result}', (20, 120), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
+
+    cv2.imshow('Time and Place - Outfit Analyzer', frame))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+    
 cap.release()
 cv2.destroyAllWindows()
