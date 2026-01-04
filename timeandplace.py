@@ -1,5 +1,10 @@
 # webcam and image capture
 import cv2
+from clip import load_model, analyzeOutfit
+
+# user input
+requiredDressCode = input("What is the dress code for your event (casual, business-casual, semi-formal, business-formal)?: ").strip().lower()
+temperature = int(input("What is the current temperature in Fahrenheit?: ").strip())
 
 cap = cv2.VideoCapture(0)
 
