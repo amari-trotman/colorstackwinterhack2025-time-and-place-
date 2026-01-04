@@ -18,7 +18,14 @@ predictedStyle = "Detecting..."
 confidenceScore = 0.0
 result = "..."
 
-ret, frame = cap.read()
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    frameCount += 1
+    
+    if frameCount % everyNthFrame == 0:
+        predictedStyle, confidenceScore = analyzeOutfit(frame, model, preprocess)
 cv2.imwrite('outfit.jpg', frame)
 
 cap.release()
