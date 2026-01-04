@@ -26,3 +26,7 @@ def analyzeOutfit(frame, model, preprocess):
 
         logits = imageFeatures @ textFeatures.T
         probs = logits.softmax(dim=-1).cpu().numpy()
+    
+    bestIdx = np.argmax(probs)
+    predictedLabel = list(dressCodePrompts.keys())[bestIdx]
+    confidence = probs[0][bestIdx]
