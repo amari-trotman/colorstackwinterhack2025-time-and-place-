@@ -1,0 +1,1 @@
+def isAppropiateForWeather(style, temperatureF):
