@@ -1,5 +1,6 @@
 import cv2
 from clipUtils import load_model, analyzeOutfit
+from weather import isAppropiateForWeather
 
 # user input
 requiredDressCode = input("What is the dress code for your event (casual, business-casual, semi-formal, business-formal)?: ").strip().lower()
