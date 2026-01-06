@@ -3,3 +3,6 @@ def isAppropiateForWeather(style, temperatureF):
 
     if style not in warmthLevels:
         return True # will not judge unknown styles
+    
+    minTemp, maxTemp = warmthLevels[style]
+    return minTemp <= temperatureF <= maxTemp
