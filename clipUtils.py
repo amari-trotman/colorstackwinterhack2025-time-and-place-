@@ -14,7 +14,7 @@ def load_model():
 def analyzeOutfit(frame, model, preprocess):
     # frame is the image captured from webcam
     # returns label and confidenceScore
-    image = Image.fromarray(frame) #converts OpenCV image to PIL image
+    image = Image.fromarray(image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))) #converts OpenCV image to PIL image
     imageInput = preprocess(image).unsqueeze(0).to(device)
 
     textPrompts = list(dressCodePrompts.values())
