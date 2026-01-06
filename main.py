@@ -31,6 +31,7 @@ while True:
 
     if frameCount % everyNthFrame == 0:
         predictedStyle, confidenceScore = analyzeOutfit(frame, model, preprocess)
+        goodForWeather = isAppropiateForWeather(predictedStyle, temperature)
         if predictedStyle == requiredDressCode:
             result = "Your outfit matches the dress code!"
         else:
