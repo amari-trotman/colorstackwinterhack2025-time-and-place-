@@ -14,4 +14,7 @@ def analyze(request):
     frame = request.FILES['frame']
     required = request.POST['dress_code']
     temp = float(request.POST['temperature'])
+
+    image = Image.open(io.BytesIO(frame.read()))
+    frame_np = np.array(image)
 # Create your views here.
