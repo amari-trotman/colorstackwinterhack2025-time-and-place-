@@ -18,5 +18,6 @@ def analyze(request):
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
 
-    predictedLabel, 
+    predictedLabel, confidenceScore = analyzeOutfit(frame_np)
+    weatherOK = isAppropiateForWeather(predictedLabel, temp)
 # Create your views here.
