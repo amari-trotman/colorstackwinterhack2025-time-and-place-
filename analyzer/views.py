@@ -7,5 +7,6 @@ import io
 from .clipUtils import analyzeOutfit
 from .weather import isAppropiateForWeather
 
-
+def index(request):
+    return render(request, 'index.html')
 # Create your views here.
