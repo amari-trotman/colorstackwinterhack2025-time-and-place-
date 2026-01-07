@@ -23,7 +23,7 @@ def analyzeOutfit(frame_np):
         probs = logits.softmax(dim=-1).cpu().numpy()
     
     bestIdx = np.argmax(probs)
-    predictedLabel = list(dressCodePrompts.keys())[bestIdx]
+    dressCodeLabel = list(dressCodePrompts.keys())[bestIdx]
     confidenceScore = probs[0][bestIdx]
 
-    return predictedLabel, confidenceScore
+    return dressCodeLabel, confidenceScore

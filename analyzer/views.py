@@ -17,4 +17,6 @@ def analyze(request):
 
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
+
+    predictedLabel, 
 # Create your views here.
