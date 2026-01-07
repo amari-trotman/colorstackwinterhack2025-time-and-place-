@@ -19,5 +19,14 @@ def analyze(request):
     frame_np = np.array(image)
 
     predictedLabel, confidenceScore = analyzeOutfit(frame_np)
-    weatherOK = isAppropiateForWeather(predictedLabel, temp)
+    weatherSuitable = isAppropiateForWeather(predictedLabel, temp)
+
+    if predictedLabel == required and weatherSuitable:
+        result = 'Your outfit matches the dress code!'
+    elif predictedLabel != required and weatherSuitable:
+        result = 'Your outfit is suitable for the weather but does not match the dress code.'
+    elif predictedLabel == required and not weatherSuitable:
+        result = 'Your outfit matches the dress code but is not suitable for the weather.'
+    else:
+        result = 'Your outfit does not match the dress code.'
 # Create your views here.
