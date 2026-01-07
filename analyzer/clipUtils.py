@@ -13,9 +13,7 @@ model.eval()
 def analyzeOutfit(frame_np):
     image = Image.fromarray(frame_np)
     imageInput = preprocess(image).unsqueeze(0).to(device)
-
-    textPrompts = list(dressCodePrompts.values())
-    textInputs = clip.tokenize(textPrompts).to(device)
+    textInputs = clip.tokenize(list(dressCodePrompts.values())).to(device)
 
     with torch.no_grad():
         imageFeatures = model.encode_image(imageInput)
