@@ -6,10 +6,9 @@ from .prompts import dressCodePrompts
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-def load_model():
-    model, preprocess = clip.load("ViT-B/32", device=device)
-    model.eval()
-    return model, preprocess
+# Load the CLIP model:
+model, preprocess = clip.load("ViT-B/32", device=device)
+model.eval()
 
 def analyzeOutfit(frame, model, preprocess):
     # frame is the image captured from webcam
