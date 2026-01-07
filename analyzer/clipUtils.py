@@ -11,7 +11,7 @@ model, preprocess = clip.load("ViT-B/32", device=device)
 model.eval()
 
 def analyzeOutfit(frame_np):
-    image = Image.fromarray(image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))) #converts OpenCV image to PIL image
+    image = Image.fromarray(frame_np)
     imageInput = preprocess(image).unsqueeze(0).to(device)
 
     textPrompts = list(dressCodePrompts.values())
