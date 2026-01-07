@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render
+from django.http import JsonResponse
 from PIL import Image
 import numpy as np
 import io
@@ -29,4 +29,6 @@ def analyze(request):
         result = 'Your outfit matches the dress code but is not suitable for the weather.'
     else:
         result = 'Your outfit does not match the dress code.'
+
+    return JsonResponse({'result': result, 'confidence': confidenceScore, 'weather appropriate': weatherSuitable, 'result': result})
 # Create your views here.
