@@ -35,6 +35,6 @@ select, input {
     flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 8px;
     outline: none;
+    border-radius: 8px;
 }
