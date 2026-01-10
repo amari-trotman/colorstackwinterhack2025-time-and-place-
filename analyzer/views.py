@@ -11,24 +11,32 @@ def index(request):
     return render(request, 'index.html')
 
 def analyze(request):
-    frame = request.FILES.get['frame']
-    required = request.POST.get['dress_code']
-    temp = float(request.POST.get['temperature'])
+    if request.method != "POST":
+        return JsonResponse({"error": "POST only"}, status=400)
+
+    frame = request.FILES.get("frame")
+    dress_code = request.POST.get("dress_code")
+    temperature = float(request.POST.get("temperature"))
 
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
 
-    predictedLabel, confidenceScore = analyzeOutfit(frame_np)
-    weatherSuitable = isAppropiateForWeather(predictedLabel, temp)
+    predicted_label, confidence = analyzeOutfit(frame_np)
+    weather_ok = isAppropiateForWeather(predicted_label, temperature)
 
-    if predictedLabel == required and weatherSuitable:
-        result = 'Your outfit matches the dress code!'
-    elif predictedLabel != required and weatherSuitable:
-        result = 'Your outfit is suitable for the weather but does not match the dress code.'
-    elif predictedLabel == required and not weatherSuitable:
-        result = 'Your outfit matches the dress code but is not suitable for the weather.'
+    if predicted_label == dress_code and weather_ok:
+        result = "Appropriate"
+    elif predicted_label != dress_code and weather_ok:
+        result = "Dress code mismatch"
+    elif predicted_label == dress_code and not weather_ok:
+        result = "Weather mismatch"
     else:
-        result = 'Your outfit does not match the dress code.'
+        result = "Not appropriate"
 
-    return JsonResponse({'result': result, 'confidence': confidenceScore, 'weather appropriate': weatherSuitable, 'result': result})
-# Create your views here.
+    return JsonResponse({
+        "result": result,
+        "predicted_label": predicted_label,
+        "confidence": round(confidence, 2),
+        "weather_ok": weather_ok
+    })
+
