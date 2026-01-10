@@ -16,7 +16,12 @@ def analyze(request):
 
     frame = request.FILES.get("frame")
     dress_code = request.POST.get("dress_code")
-    temperature = float(request.POST.get("temperature"))
+    temperature = request.POST.get("temperature")
+
+    if not frame or not dress_code or not temperature:
+        return JsonResponse({"error": "Missing input"}, status=400)
+
+    temperature = float(temperature)
 
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
