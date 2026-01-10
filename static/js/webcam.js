@@ -9,4 +9,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
 function capture() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const.toBlob((blob) => {
+        
 }
