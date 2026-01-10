@@ -46,8 +46,20 @@ video {
     box-shadow: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-.verdict {
+.result {
     margin-top: 20px;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.result.appropriate {
+    color: #4caf50;
+}
+
+.result.warning {
+    color: #ff9800;
+}
+
+.result.bad {
+    color: #f44336;
 }
