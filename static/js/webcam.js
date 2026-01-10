@@ -3,9 +3,11 @@ const canvas = document.getElementById('canvas');
 const result = document.getElementById('result');
 const details = document.getElementById('details');
 
+// Start video stream
 navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => video.srcObject = stream);
+    .then(stream => {video.srcObject = stream; });
 
+// Capture frame and send to server
 function capture() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
