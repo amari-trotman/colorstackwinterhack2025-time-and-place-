@@ -22,4 +22,5 @@ function capture() {
             result.textContent = res.result;
             details.textContent = `Detected: ${res.predictedLabel} | Confidence: ${res.confidenceScore}`;
         });
+    }, 'image/jpeg');
 }
