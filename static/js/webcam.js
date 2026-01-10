@@ -12,9 +12,14 @@ function capture() {
 
     canvas.toBlob((blob) => {
         const formData = new FormData();
-        formData.appemd('frame', blob);
+        formData.append('frame', blob);
         formData.append('dressCode', document.getElementById('dressCode').value);
         formData.append('temperature', document.getElementById('temperature').value);
 
-        
+        fetch('/analyze', { method: 'POST', body: formData})
+        .then(res => res.json())
+        .then(res => {
+            result.textContent = res.result;
+            details.textContent = `Detected: ${res.predictedLabel} | Confidence: ${res.confidenceScore}`;
+        });
 }
