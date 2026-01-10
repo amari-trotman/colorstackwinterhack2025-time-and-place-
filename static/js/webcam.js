@@ -24,3 +24,5 @@ function capture() {
         });
     }, 'image/jpeg');
 }
+
+setInterval(capture, 1000); // 1 FPS
