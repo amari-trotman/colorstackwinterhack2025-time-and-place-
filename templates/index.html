@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Welcome to TimeandPlace</h1>
+    <div class="container">
+        <h1>Welcome to TimeandPlace</h1>
+        <div class="controls">
+            <select id="dress-code">
+                <option value="casual">Casual</option>
+                <option value="business-casual">Business Casual</option>
+                <option value="semi-formal">Semi-Formal</option>
+                <option value="business-formal">Business Formal</option>
+            </select>
 
-    <label>What is the dress code for your event?</label>
-    <select id="dress-code">
-        <option value="casual">Casual</option>
-        <option value="business-casual">Business Casual</option>
-        <option value="semi-formal">Semi-Formal</option>
-        <option value="business-formal">Business Formal</option>
-    </select>
+            <input type="number" id="temperature" value="70">
+        </div>
 
-    <label>What will the temperature be like in Farenheit?</label>
-    <input type="number" id="temperature" value="70">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" width="320" height="240" hidden></canvas>
 
-    <video id="video" autoplay></video>
-    <canvas id="canvas" width="320" height="240" hidden></canvas>
-
-    <h3 id="result">Analyzing...</h3>
-    <p id="outfit-suggestion"></p>
-
+        <div id="result">Analyzing...</div>
+        <div id="outfit-suggestion"></div>
+    </div>
     <script src="/static/js/webcam.js"></script>
 </body>
 </html>
