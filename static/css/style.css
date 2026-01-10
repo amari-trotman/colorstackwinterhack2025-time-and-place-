@@ -63,3 +63,8 @@ video {
 .result.bad {
     color: #f44336;
 }
+
+.details {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
