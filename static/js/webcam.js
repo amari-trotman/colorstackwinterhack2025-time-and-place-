@@ -12,4 +12,9 @@ function capture() {
 
     canvas.toBlob((blob) => {
         const formData = new FormData();
+        formData.appemd('frame', blob);
+        formData.append('dressCode', document.getElementById('dressCode').value);
+        formData.append('temperature', document.getElementById('temperature').value);
+
+        
 }
