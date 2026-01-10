@@ -10,6 +10,6 @@ function capture() {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const.toBlob((blob) => {
-        
+    canvas.toBlob((blob) => {
+        const formData = new FormData();
 }
