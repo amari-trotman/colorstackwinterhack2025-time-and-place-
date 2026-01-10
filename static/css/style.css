@@ -38,3 +38,10 @@ select, input {
     outline: none;
     border-radius: 8px;
 }
+
+video {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 2px solid rgba(255, 255, 255, 0.15);
+}
