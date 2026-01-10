@@ -11,9 +11,9 @@ def index(request):
     return render(request, 'index.html')
 
 def analyze(request):
-    frame = request.FILES['frame']
-    required = request.POST['dress_code']
-    temp = float(request.POST['temperature'])
+    frame = request.FILES.get['frame']
+    required = request.POST.get['dress_code']
+    temp = float(request.POST.get['temperature'])
 
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
