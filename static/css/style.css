@@ -30,3 +30,11 @@ h1 {
     margin-bottom: 15px;
     gap: 10px;
 }
+
+select, input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
