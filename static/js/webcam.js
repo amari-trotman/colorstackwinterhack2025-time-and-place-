@@ -38,6 +38,14 @@ startBtn.addEventListener("click", () => {
   }, 1000);
 });
 
+// Stop analysis when stop button is clicked
+stopBtn.addEventListener("click", () => {
+  analyzing = false;
+  result.textContent = "Analysis stopped.";
+  result.className = "result"
+  details.textContent = "";
+});
+
 // Capture & analyze frame ONLY if analyzing = true
 function capture() {
   if (!analyzing) return;
