@@ -86,9 +86,8 @@ function capture() {
       details.innerHTML = `
         <div>Detected style: <b>${data.predicted_label}</b></div>
         <div>Confidence: ${(data.confidence * 100).toFixed(1)}%</div>
-        <div>Matched prompt: "${data.prompt}"</div>
       `;
-      
+ 
     } catch (err) {
       console.error(err);
       result.textContent = "Error analyzing outfit";
