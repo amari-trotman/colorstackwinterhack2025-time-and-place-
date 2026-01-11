@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.http import JsonResponse
 from PIL import Image
@@ -10,6 +11,7 @@ from .weather import isAppropiateForWeather
 def index(request):
     return render(request, 'index.html')
 
+@csrf_exempt
 def analyze(request):
     if request.method != "POST":
         return JsonResponse({"error": "POST only"}, status=400)
