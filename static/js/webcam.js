@@ -3,6 +3,8 @@ const canvas = document.getElementById("canvas");
 const result = document.getElementById("result");
 const details = document.getElementById("details");
 const startBtn = document.getElementById("capture-btn");
+const countdownEl = document.getElementById("countdown");
+const stopBtn = document.getElementById("stop-btn");
 
 let analyzing = false;
 
