@@ -149,3 +149,14 @@ video {
 .dress-buttons button.active {
     background: rgba(0, 180, 255, 0.45);
 }
+
+.temp-slider {
+    margin: 15px 0;
+    position: relative;
+}
+
+.temp-slider span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
