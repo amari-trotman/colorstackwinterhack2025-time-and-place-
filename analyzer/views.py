@@ -26,7 +26,7 @@ def analyze(request):
     image = Image.open(io.BytesIO(frame.read()))
     frame_np = np.array(image)
 
-    predicted_label, confidence = analyzeOutfit(frame_np)
+    predicted_label, confidence, prompt_text = analyzeOutfit(frame_np)
     weather_ok = isAppropiateForWeather(predicted_label, temperature)
 
     if predicted_label == dress_code and weather_ok:
@@ -43,5 +43,6 @@ def analyze(request):
         "predicted_label": predicted_label,
         "confidence": round(confidence, 2),
         "weather_ok": weather_ok
+        "prompt_text": prompt_text
     })
 
