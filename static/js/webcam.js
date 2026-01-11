@@ -107,6 +107,15 @@ document.querySelectorAll(".dress-buttons button").forEach(btn => {
     });
 });
 
+// Temperature slider handling
+const tempSlider = document.getElementById("temperature");
+const tempValue = document.getElementById("temp-value");
+
+tempValue.textContent = `${tempSlider.value}°F`;
+
+tempSlider.addEventListener("input", () => {
+    tempValue.textContent = `${tempSlider.value}°F`;
+});
 
 // Run loop, but gated
 setInterval(capture, 1000);
