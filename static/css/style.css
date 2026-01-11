@@ -122,3 +122,30 @@ video {
     margin-top: 10px;
     font-weight: bold;
 }
+
+.dress-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.dress-buttons button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dress-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+.dress-buttons button.active {
+    background: rgba(0, 180, 255, 0.45);
+}
