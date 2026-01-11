@@ -32,13 +32,13 @@ def analyze(request):
     weather_ok = isAppropiateForWeather(predicted_label, temperature)
 
     if predicted_label == dress_code and weather_ok:
-        result = "Appropriate"
+        result = "Your outfit meets the dress code!"
     elif predicted_label != dress_code and weather_ok:
-        result = "Dress code mismatch"
+        result = "Your outfit does not meet the dress code."
     elif predicted_label == dress_code and not weather_ok:
-        result = "Weather mismatch"
+        result = "Your outfit meets the dress code! However, it may not be suitable for the current weather."
     else:
-        result = "Not appropriate"
+        result = "Your outfit does not meet the dress code and may not be suitable for the current weather."
 
     return JsonResponse({
         "result": str(result),
