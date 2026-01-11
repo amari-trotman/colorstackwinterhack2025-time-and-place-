@@ -1,5 +1,5 @@
 /* intro animation */
-#splash {
+#intro {
     position: fixed;
     inset: 0;
     display: flex;
@@ -11,12 +11,12 @@
     text-align: center;
 }
 
-.splash-title {
+.title {
     font-size: 3rem;
     animation: slideIn 1s ease forwards;
 }
 
-.splash-subtitle {
+.subtitle {
     opacity: 0;
     font-size: 1.1rem;
     animation: fadeIn 1.2s ease forwards;
@@ -24,7 +24,7 @@
 }
 
 /* hide intro */
-#splash.fade-out {
+#intro.fade-out {
     animation: fadeOut 1s ease forwards;
 }
 
