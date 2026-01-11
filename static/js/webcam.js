@@ -122,7 +122,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         document.getElementById("splash").classList.add("fade-out");
         document.querySelector(".app").classList.remove("hidden");
-    }, 2200); // total intro duration
+    }, 5); // total intro duration
 });
 
 // Run loop, but gated
