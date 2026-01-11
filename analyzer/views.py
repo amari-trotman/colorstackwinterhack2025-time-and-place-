@@ -41,10 +41,10 @@ def analyze(request):
         result = "Not appropriate"
 
     return JsonResponse({
-        "result": result,
-        "predicted_label": predicted_label,
-        "confidence": round(confidence, 2),
-        "weather_ok": weather_ok,
-        "prompt_text": prompt_text
+        "result": str(result),
+        "predicted_label": str(predicted_label),
+        "confidence": float(round(confidence, 2)),
+        "weather_ok": bool(weather_ok),
+        "prompt_text": str(prompt_text)
     })
 
