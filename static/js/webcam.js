@@ -22,9 +22,20 @@ startBtn.addEventListener("click", () => {
     result.textContent = "Please select dress code and temperature.";
     return;
   }
+  // Countdown from 3
+  let count = 3;
+  countdownEl.textContent = count;
 
-  analyzing = true;
-  result.textContent = "Analyzing outfit...";
+  const timer = setInterval(() => {
+    count--;
+    countdownEl.textContent = count > 0 ? count : "";
+
+    if (count === 0) {
+      clearInterval(timer);
+      analyzing = true;
+      result.textContent = "Analyzing outfit...";
+    }
+  }, 1000);
 });
 
 // Capture & analyze frame ONLY if analyzing = true
