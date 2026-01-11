@@ -117,6 +117,14 @@ tempSlider.addEventListener("input", () => {
     tempValue.textContent = `${tempSlider.value}°F`;
 });
 
+// Reveal after intro
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("splash").classList.add("fade-out");
+        document.querySelector(".app").classList.remove("hidden");
+    }, 2200); // total intro duration
+});
+
 // Run loop, but gated
 setInterval(capture, 1000);
 

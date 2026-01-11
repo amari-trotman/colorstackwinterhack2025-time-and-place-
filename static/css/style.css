@@ -1,43 +1,61 @@
-.intro {
-    margin-bottom: 20px;
-    overflow: hidden;
+/* intro animation */
+#splash {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+    text-align: center;
 }
 
-.title {
-    font-size: 2.4rem;
+.splash-title {
+    font-size: 3rem;
     animation: slideIn 1s ease forwards;
 }
 
-.subtitle {
+.splash-subtitle {
     opacity: 0;
+    font-size: 1.1rem;
     animation: fadeIn 1.2s ease forwards;
     animation-delay: 0.6s;
-    font-size: 1rem;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(-120%);
+/* hide intro */
+#splash.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+/* center container */
+.app {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* other animation */
+@keyframes fadeOut {
+    to {
         opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
+        visibility: hidden;
     }
 }
-
-@keyframes fadeIn {
-    to {
-        opacity: 0.85;
-    }
-}
-
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
+    color: white;
 }
 
 .sky {
@@ -59,15 +77,12 @@ body {
     width: 440px;
     padding: 28px;
     border-radius: 20px;
-    display: grid;
-    place-items: center;
 
     background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(18px) saturate(180%);
     
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-    text-align: center;
 }
 
 h1 {
