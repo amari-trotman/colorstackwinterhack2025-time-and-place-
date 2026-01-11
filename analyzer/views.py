@@ -42,7 +42,7 @@ def analyze(request):
         "result": result,
         "predicted_label": predicted_label,
         "confidence": round(confidence, 2),
-        "weather_ok": weather_ok
+        "weather_ok": weather_ok,
         "prompt_text": prompt_text
     })
 
