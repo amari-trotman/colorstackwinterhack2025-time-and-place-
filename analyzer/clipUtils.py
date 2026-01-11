@@ -26,4 +26,5 @@ def analyzeOutfit(frame_np):
     dressCodeLabel = list(dressCodePrompts.keys())[bestIdx]
     confidenceScore = probs[0][bestIdx]
 
-    return dressCodeLabel, confidenceScore
+    promptText = list(dressCodePrompts.values())[bestIdx]
+    return dressCodeLabel, confidenceScore, promptText
