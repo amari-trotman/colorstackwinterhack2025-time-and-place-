@@ -68,9 +68,27 @@ function capture() {
       const data = await res.json();
 
       result.textContent = data.result;
-      details.textContent =
-        `Detected: ${data.predicted_label} | Confidence: ${data.confidence}`;
+      result.className = "result";
 
+      if (data.result === "Appropriate") 
+      {
+        result.classList.add("appropriate");
+      } 
+      else if (data.result.includes("mismatch")) 
+      {
+        result.classList.add("warning");
+      }
+      else
+      {
+        result.classList.add("bad")
+      }
+
+      details.innerHTML = `
+        <div>Detected style: <b>${data.predicted_label}</b></div>
+        <div>Confidence: ${(data.confidence * 100).toFixed(1)}%</div>
+        <div>Matched prompt: "${data.prompt}"</div>
+      `;
+      
     } catch (err) {
       console.error(err);
       result.textContent = "Error analyzing outfit";
