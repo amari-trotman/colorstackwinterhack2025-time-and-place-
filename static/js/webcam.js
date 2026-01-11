@@ -120,9 +120,9 @@ tempSlider.addEventListener("input", () => {
 // Reveal after intro
 window.addEventListener("load", () => {
     setTimeout(() => {
-        document.getElementById("splash").classList.add("fade-out");
+        document.getElementById("intro").classList.add("fade-out");
         document.querySelector(".app").classList.remove("hidden");
-    }, 5); // total intro duration
+    }, 2500); // total intro duration
 });
 
 // Run loop, but gated
