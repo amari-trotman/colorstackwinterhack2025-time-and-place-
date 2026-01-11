@@ -96,6 +96,18 @@ function capture() {
   }, "image/jpeg");
 }
 
+// Dress code button handling
+document.querySelectorAll(".dress-buttons button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".dress-buttons button")
+            .forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById("dress_code").value = btn.dataset.code;
+    });
+});
+
+
 // Run loop, but gated
 setInterval(capture, 1000);
 
