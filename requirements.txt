@@ -3,4 +3,4 @@ gunicorn
 Pillow
 numpy
 torch
-clip
+git+https://github.com/openai/CLIP.git
