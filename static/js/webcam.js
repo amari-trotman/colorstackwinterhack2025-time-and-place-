@@ -35,7 +35,7 @@ startBtn.addEventListener("click", () => {
       analyzing = true;
       result.textContent = "Analyzing outfit...";
     }
-  }, 1000);
+  }, 2000);
 });
 
 // Stop analysis when stop button is clicked
@@ -121,7 +121,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         document.getElementById("intro").classList.add("fade-out");
         document.querySelector(".app").classList.remove("hidden");
-    }, 2500); // total intro duration
+    }, 7000); // total intro duration
 });
 
 // Run loop, but gated

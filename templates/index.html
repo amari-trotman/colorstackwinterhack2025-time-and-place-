@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <title>TimeandPlace - AI Outfit Analysis</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -12,33 +13,36 @@
 
     <div id="intro">
         <h1 class="title">Welcome to TimeandPlace</h1>
-        <p class="subtitle">Your personal attire and weather assistant for each occasion</p>
+        <p class="subtitle">Your personal attire and weather assistant for every occasion</p>
     </div>
 
     <div class="app hidden">
         <div class="container">
+            <h3>What is the dress code for your event? </h3>
             <div class="controls">
                 <div class="dress-buttons">
                     <button data-code="casual">Casual</button>
                     <button data-code="business-casual">Business Casual</button>
                     <button data-code="semi-formal">Semi-Formal</button>
                     <button data-code="business-formal">Business Formal</button>
-                </div>
-                <input type="hidden" id="dress_code" placeholder="casual">
+                </div> 
                 
+                <h3> What will be the temperature at your event? </h3>
                 <div class="temp-slider">
                     <span id="temp-value">70°F</span>
                     <input type="range" id="temperature" min="30" max="100" value="70">
                 </div>
 
-                <button id="capture-btn">Start Analysis</button>
-                <button id="stop-btn">Stop Analysis</button>
-            </div>
-
+                <div class="analysis-buttons">
+                    <button id="capture-btn">Start Analysis</button>
+                    <button id="stop-btn">Stop Analysis</button>
+                </div>
+                <input type="hidden" id="dress_code">
+                
             <video id="video" autoplay></video>
             <canvas id="canvas" width="320" height="240" hidden></canvas>
 
-            <div id="result" class="result">Press Start Analysis to begin!</div>
+            <div id="result" class="result">Press "Start Analysis" to begin!</div>
             <div id="details"></div>
         </div>
     </div>

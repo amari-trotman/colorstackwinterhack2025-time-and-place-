@@ -46,6 +46,17 @@
 }
 
 /* other animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeOut {
     to {
         opacity: 0;
@@ -64,7 +75,7 @@ body {
 .sky {
     position: fixed;
     inset: 0;
-    background: linear-gradient(120deg, #4facfe, #00f2fe, #4facfe);
+    background: linear-gradient(180deg, #0247a4 0.000%, #0065d3 20.000%, #008ef3 40.000%, #15b6ff 60.000%, #3dcfff 80.000%, #75d2f7 100.000%);
     background-size: 400% 400%;
     animation: skyMove 18s ease infinite;
     z-index: -2;
@@ -81,11 +92,15 @@ body {
     padding: 28px;
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
     
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.208);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+
+    transform: scale(0.80);
+    transform-origin: center;
 }
 
 h1 {
@@ -95,8 +110,8 @@ h1 {
 
 .controls {
     display: flex;
-    margin-bottom: 15px;
-    gap: 10px;
+    flex-direction: column;
+    gap: 14px;
 }
 
 select, input {
@@ -118,6 +133,7 @@ video {
     margin-top: 20px;
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .result.appropriate {
@@ -152,13 +168,17 @@ video {
 
 .dress-buttons button {
     padding: 12px;
+    border: 1px solid rgba(255,255,255,0.35);
     border-radius: 12px;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    background: rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.08);
     color: white;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .dress-buttons button:hover {
@@ -168,15 +188,58 @@ video {
 
 .dress-buttons button.active {
     background: rgba(0, 180, 255, 0.45);
+    border-color: rgba(0, 200, 255, 0.6);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
 
 .temp-slider {
     margin: 15px 0;
     position: relative;
+    accent-color: #335cff00;
 }
 
 .temp-slider span {
     display: block;
     margin-bottom: 5px;
     font-weight: 600;
+}
+
+.temp-slider input[type="range"] {
+    width: 100%;
+    background: transparent;
+}
+
+.analysis-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.analysis-buttons button {
+    padding: 18px;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    background: rgba(255,255,255,0.18);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.analysis-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+#temp-value {
+    text-align: center;
+}
+
+.temperature {
+    width: 75%;
 }
