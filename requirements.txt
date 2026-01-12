@@ -3,4 +3,3 @@ gunicorn
 Pillow
 numpy
 torch
-clip-by-openai
