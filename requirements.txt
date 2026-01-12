@@ -3,3 +3,4 @@ gunicorn
 Pillow
 numpy
 torch
+clip
