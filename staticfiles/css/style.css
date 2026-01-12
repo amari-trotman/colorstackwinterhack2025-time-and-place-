@@ -1,0 +1,245 @@
+/* intro animation */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    animation: slideIn 1s ease forwards;
+}
+
+.subtitle {
+    opacity: 0;
+    font-size: 1.1rem;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* hide intro */
+#intro.fade-out {
+    animation: fadeOut 1s ease forwards;
+    pointer-events: none;
+}
+
+/* center container */
+.app {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* other animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+}
+
+.sky {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #0247a4 0.000%, #0065d3 20.000%, #008ef3 40.000%, #15b6ff 60.000%, #3dcfff 80.000%, #75d2f7 100.000%);
+    background-size: 400% 400%;
+    animation: skyMove 18s ease infinite;
+    z-index: -2;
+}
+
+@keyframes skyMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 440px;
+    padding: 28px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    
+    border: 1px solid rgba(255, 255, 255, 0.208);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+
+    transform: scale(0.80);
+    transform-origin: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+select, input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result.appropriate {
+    color: #4caf50;
+}
+
+.result.warning {
+    color: #ff9800;
+}
+
+.result.bad {
+    color: #f44336;
+}
+
+.details {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.countdown {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dress-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.dress-buttons button {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.dress-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+.dress-buttons button.active {
+    background: rgba(0, 180, 255, 0.45);
+    border-color: rgba(0, 200, 255, 0.6);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+.temp-slider {
+    margin: 15px 0;
+    position: relative;
+    accent-color: #335cff00;
+}
+
+.temp-slider span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.temp-slider input[type="range"] {
+    width: 100%;
+    background: transparent;
+}
+
+.analysis-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.analysis-buttons button {
+    padding: 18px;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    background: rgba(255,255,255,0.18);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.analysis-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+#temp-value {
+    text-align: center;
+}
+
+.temperature {
+    width: 75%;
+}
